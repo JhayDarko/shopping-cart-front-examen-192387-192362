@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atletic Clothes - Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Atletic Clothes</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="dashboard.html">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="usersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Users
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="usersDropdown">
+                  <li><a class="dropdown-item" href="#" onclick="getUsers()">List Users</a></li>
+                  <li><a class="dropdown-item" href="#" onclick="showCreateUserForm()">Create User</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Products
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                  <li><a class="dropdown-item" href="#" onclick="getProducts()">List Products</a></li>
+                  <li><a class="dropdown-item" href="#" onclick="showCreateProductForm()">Create Product</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="ordersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Orders
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="ordersDropdown">
+                  <li><a class="dropdown-item" href="#" onclick="getCarts()">List Carts</a></li>
+                  <li><a class="dropdown-item" href="#" onclick="showCreateCartForm()">Create Cart</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" onclick="logout()">Salir</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <div class="card-header text-center bg-secondary text-white" id="cardHeader">
+            <h4>Welcome to our store!</h4>
+          </div>
+          <div class="card-body">
+            <div id="alert"></div>
+            <div id="info"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col text-center">
+        <p class="fw-semibold">&copy; All rights reserved 2025</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="showModal"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="../js/userService.js"></script>
+  <script src="../js/productService.js"></script>
+  <script src="../js/cartService.js"></script>
+  <script src="../js/loginUser.js"></script>
+</body>
+</html>
