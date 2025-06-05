@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
+
 function login(userName, password) {
   const credentials = { username: userName, password: password };
   fetch('https://fakestoreapi.com/auth/login', {
@@ -39,3 +41,16 @@ function logout() {
   localStorage.removeItem('token');
   location.href = '../index.html';
 }
+
+function tokenValidate() {
+  const TOKEN = localStorage.getItem('token');
+  if (TOKEN == null && !location.href.includes('index.html')) {
+    location.href = '../index.html';
+  }
+  console.log('Token: ', TOKEN);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  tokenValidate();
+  document.getElementById('logoutButton').addEventListener('click', logout);
+});
